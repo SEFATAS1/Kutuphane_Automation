@@ -1,0 +1,281 @@
+﻿<UserControl x:Class="UI.BookAdd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="862" d:DesignWidth="1153" Loaded="KitapListesi_Load">
+    <Grid x:Name="MyGrid" Background="White">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="10*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Viewbox>
+
+                <DockPanel>
+
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,10,0,0">
+
+                        <DockPanel>
+
+                            <Label Content="Kitap Id:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                </Label.Effect>
+                            </Label>
+
+                            <TextBox Text="{Binding Path=SelectedItem.Id, ElementName=BookAdd_dgv}" x:Name="BookId_txt" IsReadOnly="True" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                        </DockPanel>
+                        
+                        <DockPanel>
+
+                            <Label Content="Kitap Adı:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                </Label.Effect>
+                            </Label>
+
+                            <TextBox Text="{Binding Path=SelectedItem.Adi, ElementName=BookAdd_dgv}" x:Name="BookName_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                        </DockPanel>
+
+                        <DockPanel>
+
+                            <Label Content="Yazar Adı:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                </Label.Effect>
+                            </Label>
+
+                            <TextBox Text="{Binding Path=SelectedItem.YazarAdi, ElementName=BookAdd_dgv}" x:Name="WriterName_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                        </DockPanel>
+
+                        <DockPanel>
+
+                            <Label Content="Yazar Soyadi:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                </Label.Effect>
+                            </Label>
+
+                            <TextBox Text="{Binding Path=SelectedItem.YazarSoyadi, ElementName=BookAdd_dgv}" x:Name="WriterSurname_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                        </DockPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="0,10,120,0">
+                                            
+                        <DockPanel>
+
+                            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right">
+
+                                <DockPanel>
+
+                                    <Label Content="Stok Adedi:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                        <Label.Effect>
+                                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                        </Label.Effect>
+                                    </Label>
+
+                                    <TextBox Text="{Binding Path=SelectedItem.StokAdedi, ElementName=BookAdd_dgv}" x:Name="Count_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                                </DockPanel>
+
+                                <DockPanel>
+
+                                    <Label Content="ISBN:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                        <Label.Effect>
+                                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                        </Label.Effect>
+                                    </Label>
+
+                                    <TextBox Text="{Binding Path=SelectedItem.ISBN, ElementName=BookAdd_dgv}" x:Name="ISBN_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                                </DockPanel>
+
+                                <DockPanel>
+
+                                    <Label Content="Yayınevi:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                        <Label.Effect>
+                                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                        </Label.Effect>
+                                    </Label>
+
+                                    <TextBox Text="{Binding Path=SelectedItem.YayineviAdi, ElementName=BookAdd_dgv}" x:Name="Publisher_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                                </DockPanel>
+                                
+                                <DockPanel>
+
+                                    <Label Content="Kayıt Tarihi:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                        <Label.Effect>
+                                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                        </Label.Effect>
+                                    </Label>
+
+                                    <TextBox Text="{Binding Path=SelectedItem.KayitTarihi, ElementName=BookAdd_dgv}" IsReadOnly="True" x:Name="RecordDate_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                                </DockPanel>
+
+                            </StackPanel>
+
+                            <StackPanel>
+
+                                <DockPanel>
+
+                                    <Label Content="Durumu:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                        <Label.Effect>
+                                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                        </Label.Effect>
+                                    </Label>
+
+                                    <ComboBox Text="{Binding Path=SelectedItem.Durum, ElementName=BookAdd_dgv}" x:Name="BookState_cmb" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="200">
+
+                                        <ComboBoxItem IsSelected="True" Content="SEÇİNİZ"/>
+                                        <ComboBoxItem Content="RAFTA"/>
+                                        <ComboBoxItem Content="EMANETTE"/>
+                                        <ComboBoxItem Content="KAYIP"/>
+                                        <ComboBoxItem Content="YASAKLI"/>
+
+                                    </ComboBox>
+
+                                </DockPanel>
+
+                                <DockPanel>
+
+                                    <Label Content="Kategori:" VerticalContentAlignment="Center" Background="#1F2832" Foreground="White" Width="150" Height="30" Margin="10">
+                                        <Label.Effect>
+                                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                                        </Label.Effect>
+                                    </Label>
+
+                                    <ComboBox Text="{Binding Path=SelectedItem.Kategori, ElementName=BookAdd_dgv}" x:Name="CategoryName_cmb" Background="AliceBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="200" Margin="10,0,10,0" Height="30" >
+
+                                        <ComboBoxItem IsSelected="True" Content="SEÇİNİZ"/>
+                                        <ComboBoxItem Content="BİLGİSAYAR"/>
+                                        <ComboBoxItem Content="ÇOCUK GELİŞİM"/>
+                                        <ComboBoxItem Content="DIŞ TİCARET"/>
+                                        <ComboBoxItem Content="DİN"/>
+                                        <ComboBoxItem Content="ELEKTİRİK"/>
+                                        <ComboBoxItem Content="HAZIRLIK"/>
+                                        <ComboBoxItem Content="HUKUK"/>
+                                        <ComboBoxItem Content="İNŞAAT"/>
+                                        <ComboBoxItem Content="İŞLETME"/>
+                                        <ComboBoxItem Content="KİŞİSEL GELİŞİM"/>
+                                        <ComboBoxItem Content="MATEMATİK"/>
+                                        <ComboBoxItem Content="MOBİLYA"/>
+                                        <ComboBoxItem Content="MUHASEBE"/>
+                                        <ComboBoxItem Content="PAZARLAMA"/>
+                                        <ComboBoxItem Content="ROMAN"/>
+                                        <ComboBoxItem Content="SOSYOLOJİ"/>
+                                        <ComboBoxItem Content="SÜRELİ YAYIN"/>
+                                        <ComboBoxItem Content="TARİH"/>
+                                        <ComboBoxItem Content="TEKSTİL"/>
+                                        <ComboBoxItem Content="YABANCI DİL"/>
+
+                                    </ComboBox>
+
+                                </DockPanel>
+
+                            </StackPanel>
+
+                        </DockPanel>
+
+                    </StackPanel>
+
+                </DockPanel>
+
+            </Viewbox>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <DataGrid x:Name="BookAdd_dgv" AutoGenerateColumns="False" Background="White" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserResizeColumns="False" FontSize="15" IsReadOnly="True" Height="auto" ScrollViewer.CanContentScroll="True">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=Id}" Header="Kitap Id" Width="1.1*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=Adi}" Header="Kitap Adı" Width="2*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=YazarAdi}" Header="Yazar Adı" Width="2*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=YazarSoyadi}" Header="Yazar Soyadı" Width="2*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=YayineviAdi}" Header="Yayınevi" Width="1.5*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=ISBN}" Header="ISBN" Width="2*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=Kategori}" Header="Kategori" Width="2*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=KayitTarihi}" Header="Kayıt Tarihi" Width="2*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=StokAdedi}" Header="Stok" Width="0.8*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=Durum}" Header="Kitap Durumu" Width="2*" IsReadOnly="True"/>
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <DockPanel HorizontalAlignment="Left">
+
+                    <ComboBox x:Name="Ara_cmb" Width="170" Height="30" Margin="10,0,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+
+                        <ComboBoxItem IsSelected="True" Content="SEÇİNİZ"/>
+                        <ComboBoxItem Content="KİTAP ADI"/>
+                        <ComboBoxItem Content="YAZAR ADI"/>
+                        <ComboBoxItem Content="ISBN"/>
+
+                    </ComboBox>
+
+                    <TextBox x:Name="Ara_txt" Width="200" Height="30" BorderThickness="3" VerticalContentAlignment="Center"/>
+
+                    <Button x:Name="Ara_btn" Content="Ara" Click="KitapEkle_Ara_Click" VerticalContentAlignment="Center" Width="60" Height="30" Margin="10,0,10,0" Background="#1F2832" Foreground="White">
+                        <Button.Effect>
+                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                        </Button.Effect>
+                    </Button>
+
+                </DockPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <DockPanel HorizontalAlignment="Right">
+
+                    <Button Content="Kitap Ekle" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="100" Height="30" Margin="10" Background="#1F2832" Foreground="White" Click="KitapEkle_Ekle_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                        </Button.Effect>
+                    </Button>
+
+                    <Button Content="Kitap Güncelle" Width="100" Height="30" Margin="10" Background="#1F2832" Foreground="White" Click="KitapEkle_Güncelle_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Direction="221" RenderingBias="Quality"/>
+                        </Button.Effect>
+                    </Button>
+
+                </DockPanel>
+
+            </Grid>
+            
+        </Grid>
+
+    </Grid>
+</UserControl>
