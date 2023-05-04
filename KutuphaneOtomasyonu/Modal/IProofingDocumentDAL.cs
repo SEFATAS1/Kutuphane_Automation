@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Controls;
 
 namespace Modal
 {
-    internal interface IProofingDocumentDAL
+    public interface IProofingDocumentDAL
     {
+        int PersonId { get; set; }
+        string PersonName { get; set; }
+        string PersonSurname { get; set; }
+        string PersonalNumber { get; set; }
+        string LookUpValue { get; set; }
+        void PDFCreate();
+        void PersonSelect(DataGrid dataGrid);
+        bool PersonIsThere();
+        void Find(DataGrid dataGrid);
+        bool Inquiry();
     }
 }
