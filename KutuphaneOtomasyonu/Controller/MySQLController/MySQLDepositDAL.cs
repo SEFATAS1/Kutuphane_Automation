@@ -163,7 +163,7 @@ namespace Controller.MySQLController
                 string query = "SELECT emanet.SonTeslimTarihi AS IadeTarihi, emanet.Id, kisiler.Adi, kisiler.Soyadi, Kisiler.KisiselNo AS KurumNo, kisiler.TelNo AS Telefon_No, kitap.Id AS KitapId, kitap.Adi AS KitapAdi, kitap.ISBN " +
                     "FROM kutuphane.emanet " +
                     "INNER JOIN kutuphane.kisiler ON emanet.kisiId = kisiler.Id " +
-                    "INNER JOIN kutuphane.kitap ON emanet.kitapId = kitap.Id WHERE SonTeslimTarihi <  '" + DateTime.Now.ToShortDateString() + "' AND IadeEdildi = 0";
+                    "INNER JOIN kutuphane.kitap ON emanet.kitapId = kitap.Id WHERE SonTeslimTarihi < '" + DateTime.Now.ToShortDateString() + "' AND IadeEdildi = 0";
                 MyDatabaseCommand.MySelectCommand(query, dataGrid);
                 MyConnection.ConnectionClose();
             }

@@ -1,4 +1,4 @@
-﻿using Service.MySqlManager;
+﻿using Controller.MySQLController;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,7 +15,7 @@ namespace UI
             InitializeComponent();
         }
 
-        MySqlBookDal book = new MySqlBookDal();
+        MySQLBookDAL book = new MySQLBookDAL();
 
         private void KitapListesi_Load(object sender, RoutedEventArgs e)
         {
