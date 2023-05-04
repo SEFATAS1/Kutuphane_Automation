@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Database.MySQLDatabase
 {
-    internal class MySQLDatabaseConnection
+    public class MySQLDatabaseConnection
     {
         MySqlConnection cn = new MySqlConnection("SERVER=127.0.0.1;DATABASE=Kutuphane;UID=root;PWD=1234");
 
