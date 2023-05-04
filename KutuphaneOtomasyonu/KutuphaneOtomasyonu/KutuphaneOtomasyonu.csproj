@@ -8,7 +8,50 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\akademisyen.png" />
+    <None Remove="Icons\anasayfa.png" />
+    <None Remove="Icons\Appicon.ico" />
+    <None Remove="Icons\close.png" />
+    <None Remove="Icons\icons8-subtract-24.png" />
+    <None Remove="Icons\kitap ekle.png" />
+    <None Remove="Icons\kitap listesi.png" />
+    <None Remove="Icons\kitap.png" />
+    <None Remove="Icons\library.png" />
+    <None Remove="Icons\Menu.png" />
+    <None Remove="Icons\okuyucu.png" />
+    <None Remove="Icons\sifre.png" />
+    <None Remove="Icons\takvim.png" />
+    <None Remove="Icons\user1.png" />
+    <None Remove="Icons\user2.png" />
+    <None Remove="Icons\çıkıs.png" />
+    <None Remove="Icons\öğrenci.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\sifre.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Controller\Controller.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\akademisyen.png" />
+    <Resource Include="Icons\anasayfa.png" />
+    <Resource Include="Icons\Appicon.ico" />
+    <Resource Include="Icons\close.png" />
+    <Resource Include="Icons\icons8-subtract-24.png" />
+    <Resource Include="Icons\kitap ekle.png" />
+    <Resource Include="Icons\kitap listesi.png" />
+    <Resource Include="Icons\kitap.png" />
+    <Resource Include="Icons\library.png" />
+    <Resource Include="Icons\Menu.png" />
+    <Resource Include="Icons\okuyucu.png" />
+    <Resource Include="Icons\takvim.png" />
+    <Resource Include="Icons\user1.png" />
+    <Resource Include="Icons\user2.png" />
+    <Resource Include="Icons\çıkıs.png" />
+    <Resource Include="Icons\öğrenci.png" />
   </ItemGroup>
 
 </Project>

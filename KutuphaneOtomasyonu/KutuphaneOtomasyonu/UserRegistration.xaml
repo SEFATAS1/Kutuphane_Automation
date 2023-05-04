@@ -1,0 +1,89 @@
+﻿<Window x:Class="UI.UserRegistration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d"
+        Title="KullanıcıKaydol" Height="500" Width="800" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Background="#252F3B">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="93*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#192028">
+
+            <Viewbox HorizontalAlignment="Right">
+
+                <Button x:Name="kapat_btn" Click="Kapat_btn_Click" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Width="50" Height="45">
+                    <DockPanel>
+                        <Image x:Name="KapatButton" Source="/Icons/close.png"/>
+                    </DockPanel>
+                </Button>
+
+            </Viewbox>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#252F3B" VerticalAlignment="Center">
+
+            <StackPanel>
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+
+                    <Label Content="Kullanıcı Adı:" Foreground="White" FontSize="15" Width="150"/>
+                    <TextBox  x:Name="UserName_txt"   Width="180" Background="Transparent" BorderThickness="3" Foreground="White" VerticalContentAlignment="Center"/>
+
+                </DockPanel>
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+
+                    <Label Content="Kullanıcı Soyadı:" Foreground="White" FontSize="15" Width="150"/>
+                    <TextBox x:Name="UserSurname_txt" Width="180" Background="Transparent" BorderThickness="3" Foreground="White" VerticalContentAlignment="Center"/>
+
+                </DockPanel>
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+
+                    <Label Content="Kullanıcı Mail Adresi:" Foreground="White" FontSize="15" Width="150"/>
+                    <TextBox  x:Name="UserMail_txt" Width="180" Background="Transparent" BorderThickness="3" Foreground="White" VerticalContentAlignment="Center"/>
+
+                </DockPanel>
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+
+                    <Label Content="Kullanıcı Telefon No:" Foreground="White" FontSize="15" Width="150"/>
+                    <TextBox  x:Name="PhoneNumber_txt" Width="180" Background="Transparent" BorderThickness="3" Foreground="White" VerticalContentAlignment="Center"/>
+
+                </DockPanel>
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+
+                    <Label Content="Kullanıcı Şifresi:" Foreground="White" FontSize="15" Width="150"/>
+                    <TextBox x:Name="Password_txt" Width="180" Background="Transparent" BorderThickness="3" Foreground="White" VerticalContentAlignment="Center"/>
+
+                </DockPanel>
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+
+                    <Label Content="Şifreyi tekrar giriniz:" Foreground="White" FontSize="15" Width="150"/>
+                    <TextBox x:Name="Password2_txt" Width="180" Background="Transparent" BorderThickness="3" Foreground="White" VerticalContentAlignment="Center"/>
+
+                </DockPanel>
+
+                <DockPanel>
+
+                    <Button Click="Kaydol_Cilick" Content="Kaydol" Width="150" Height="30" Foreground="White" Background="Transparent" FontSize="15" BorderThickness="3"/>
+
+                </DockPanel>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>

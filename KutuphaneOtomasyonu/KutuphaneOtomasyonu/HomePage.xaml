@@ -1,0 +1,190 @@
+﻿<Window x:Class="UI.HomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+        xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+	    xmlns:mctk="using:Microsoft.Toolkit.Uwp.UI.Controls"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d"
+        Title="Anasayfa" Background="#1F2832" Opacity="1" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" Height="{x:Static SystemParameters.MaximizedPrimaryScreenHeight}" Width="{x:Static SystemParameters.MaximizedPrimaryScreenWidth}" Loaded="Anasayfa_Loaded">
+    <Grid Margin="7">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="MenuBoyut" Width="20*" />
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="Transparent">
+
+            <Grid Grid.Column="0"  >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="93*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0">
+
+                    <DockPanel Margin="5">
+                        <Button  Background="Transparent" BorderThickness="0" Click="Anasayfa_IlkSayfa_Click">
+                            <Image Source="/Icons/anasayfa.png" Width="56" RenderTransformOrigin="0.586,0.5"/>
+                        </Button>
+                        <Label x:Name="Baslik_lbl" Content="KÜTÜPHANE OTOMASYONU" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                    </DockPanel>
+
+                </Border>
+
+                <Grid Grid.Row="1">
+
+                    <Viewbox x:Name="Anasayfa_Viewbox" Width="auto">
+
+                        <StackPanel>
+
+                            <Button x:Name="MenuButon_KitapListesi" Click="MenuButon_KitapListesi_Click" Background="Transparent" Width="auto" Height="60" Style="{DynamicResource MenuButonları}">
+
+                                <DockPanel>
+                                    <Image Source="/Icons/kitap listesi.png" Width="56" Height="40"/>
+                                    <Label x:Name="KitapListesi_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Emanet" Width="200" Foreground="White"/>
+                                </DockPanel>
+
+                            </Button>
+
+                            <Button x:Name="MenuButon_KitapEkle" Click="MenuButon_KitapEkle_Click" Background="Transparent" Width="auto" Height="60" Style="{DynamicResource MenuButonları}">
+
+                                <DockPanel>
+                                    <Image Source="/Icons/kitap ekle.png" Width="56" Height="40"/>
+                                    <Label x:Name="KitapEkle_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Kitap Ekle" Width="200" Foreground="White"/>
+                                </DockPanel>
+
+                            </Button>
+
+                            <Button x:Name="MenuButon_AkademisyenKayıt" Click="MenuButon_AkademisyenKayıt_Click" Background="Transparent" Width="auto" Height="60" Style="{DynamicResource MenuButonları}" >
+
+                                <DockPanel>
+                                    <Image Source="/Icons/akademisyen.png" Width="56" Height="40"/>
+                                    <Label x:Name="AkademisyenKayit_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Akademisyen Kayıt" Width="200" Foreground="White"/>
+                                </DockPanel>
+
+                            </Button>
+
+                            <Button x:Name="MenuButon_OgrenciKayıt" Click="MenuButon_OgrenciKayit_Click" Background="Transparent" Width="auto" Height="60" Style="{DynamicResource MenuButonları}">
+
+                                <DockPanel>
+                                    <Image Source="/Icons/öğrenci.png" Width="56" Height="40"/>
+                                    <Label x:Name="OgrenciKayit_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Öğrenci Kayıt" Width="200" Foreground="White"/>
+                                </DockPanel>
+
+                            </Button>
+
+                            <Button x:Name="MenuButon_AnlikOkuyucular" Background="Transparent" Width="auto" Height="60" Style="{DynamicResource MenuButonları}" Click="MenuButon_AnlikOkuyucular_Click">
+
+                                <DockPanel>
+                                    <Image Source="/Icons/okuyucu.png" Width="56" Height="40"/>
+                                    <Label x:Name="AnlikOkuyucular_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Anlık Okuyucular" Width="200" Foreground="White"/>
+                                </DockPanel>
+
+                            </Button>
+
+                            <Button x:Name="MenuButon_ZamaniDolanlar" Background="Transparent" Width="auto" Height="60" Style="{DynamicResource MenuButonları}" Click="MenuButon_ZamaniDolanlar_Click">
+
+                                <DockPanel>
+                                    <Image Source="/Icons/takvim.png" Width="56" Height="40"/>
+                                    <Label x:Name="ZamaniDolanlar_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Zamanı Dolanlar" Width="200" Foreground="White"/>
+                                </DockPanel>
+
+                            </Button>
+
+                            <Button Background="Transparent" Click="MenuButon_OturumKapat_Click" Width="auto" Height="60" Style="{DynamicResource MenuButonları}">
+
+                                <DockPanel>
+                                    <Image Source="/Icons/çıkıs.png" Width="56" Height="40"/>
+                                    <Label x:Name="Cikis_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Oturumu Kapat
+                                           " Width="200" Foreground="White"/>
+                                </DockPanel>
+
+                            </Button>
+
+                            <Label x:Name="VersiyonNumarasi_lbl" Content="0.0.0.0" Background="Transparent" Foreground="White" Margin="90,0,0,10"></Label>
+
+                        </StackPanel>
+
+                    </Viewbox>
+
+                </Grid>
+
+            </Grid>
+
+        </Border>
+
+        <Grid Grid.Column="1" Background="White">
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="93*"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="91,75*"/>
+                    <ColumnDefinition Width="8,25*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1" Background="#1F2832">
+
+                    <Viewbox VerticalAlignment="Center" HorizontalAlignment="Left">
+
+                        <DockPanel Width="110" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            
+                            <Button x:Name="Kucult_btn" Click="Kucult_btn_Click" HorizontalAlignment="Right" Width="50" Height="45" Margin="0,0,10,0" Style="{DynamicResource MenuButonları}">
+                                <DockPanel>
+                                    <Image x:Name="KucultButton" Source="/Icons/icons8-subtract-24.png"/>
+                                </DockPanel>
+                            </Button>
+                            
+                            <Button x:Name="kapat_btn" Click="Kapat_btn_Click" HorizontalAlignment="Right" Width="50" Height="45" Style="{DynamicResource MenuButonları}">
+                                <DockPanel>
+                                    <Image x:Name="KapatButton" Source="/Icons/close.png"/>
+                                </DockPanel>
+                            </Button>
+                            
+                        </DockPanel>
+
+                    </Viewbox>
+
+                </Grid>
+
+                <Grid Grid.Column="0" Background="#1F2832">
+
+                    <Viewbox HorizontalAlignment="Left">
+
+                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            <Button x:Name="MenuAc_btn" Click="MenuAcKapa_btn" HorizontalAlignment="Right" Width="50" Height="45" Style="{DynamicResource MenuButonları}">
+                                <DockPanel>
+                                    <Image x:Name="MenuButton" Source="/Icons/Menu.png"/>
+                                </DockPanel>
+                            </Button>
+
+                        </DockPanel>
+
+                    </Viewbox>
+
+                </Grid>
+
+            </Grid>
+
+            <Grid x:Name="MasterPage" Grid.Row="1" Grid.Column="1">
+
+               
+
+            </Grid>
+            
+        </Grid>
+
+    </Grid>
+</Window>
